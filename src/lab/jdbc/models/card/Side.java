@@ -1,27 +1,16 @@
-package lab;
+package lab.jdbc.models.card;
 
-public class side {
+public  abstract class Side {
     private int idSide;
 
     private String content;
-
-
-
     // Constructeur du side
-    public side() {
+    public Side() {
 
     }
-
-
-    // Constructeur du side byId
-    public side(int idSide) {
-        this();
-        this.idSide = idSide;
-    }
-
     // Constructeur complet
-    public side(int idSide, String content) {
-        this(idSide);
+    public Side(int idSide, String content) {
+        this.idSide = idSide;
         this.content = content;
     }
 
@@ -40,5 +29,14 @@ public class side {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Side{");
+        sb.append("idSide=").append(idSide);
+        sb.append(", content='").append(content).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
